@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "coverage": "nyc npm test",
     "test": "mocha",
     "doc": "typedoc",
     "start": ""
@@ -15,7 +16,9 @@
     "@types/chai": "^4.2.16",
     "@types/mocha": "^8.2.2",
     "chai": "^4.3.4",
+    "coveralls": "^3.1.0",
     "mocha": "^8.3.2",
+    "nyc": "^15.1.0",
     "ts-node": "^9.1.1",
     "typedoc": "^0.20.35"
   }
