@@ -54,10 +54,12 @@ export class Plate {
     return 5
   }
 
+  getGroups() {
+    let resultado: string[] = []
+    for (let i of this.food){
+      resultado.push(i[0].getGroup())
+    }
+    return resultado
+  }
+
 }
-
-
-export let plato02 = new Plate("Arroz con huevo", new Map<Food,number>([[food.huevo_gallina, 100], [food.arroz_blanco, 300]]), "Entrante")
-export let plato03 = new Plate("Arroz con huevo", new Map<Food,number>([[food.huevo_gallina, 100], [food.arroz_blanco, 300]]), "Primer Plato")
-export let plato04 = new Plate("Arroz con huevo", new Map<Food,number>([[food.huevo_gallina, 100], [food.arroz_blanco, 300]]), "Segundo Plato")
-
