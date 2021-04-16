@@ -1,6 +1,7 @@
 import {Food} from './Food'
+import * as food from './list_food'
 
-type Category = "Entrante" | "Primer plato" | "Segundo Plato" | "Postre"
+type Category = "Entrante" | "Primer Plato" | "Segundo Plato" | "Postre"
 
 export class Plate {
   
@@ -19,6 +20,10 @@ export class Plate {
     for (let food of this.food) {
       console.log(food[0].getName());
     } 
+  }
+
+  getCategory() {
+    return this.category;
   }
 
   getNutritional() { 
@@ -45,17 +50,14 @@ export class Plate {
   
   priceGenerator() { //calcular el precio del plato según los alimentos que tenga y su proporcion
     //let price = 
+
+    return 5
   }
 
 }
 
-let ternera = new Food("Ternera", "Carne", "Madrid", 30, 40, 10, 100);
-let alimento01 = new Food("Carne molida", "Carne", "Valladolid", 200, 10, 50, 10);
-let alimento02 = new Food("Carne molida", "Carne", "Valladolid", 200, 10, 50, 10);
-let alimento03 = new Food("Carne molida", "Carne", "Valladolid", 200, 10, 50, 10);
 
+export let plato02 = new Plate("Arroz con huevo", new Map<Food,number>([[food.huevo_gallina, 100], [food.arroz_blanco, 300]]), "Entrante")
+export let plato03 = new Plate("Arroz con huevo", new Map<Food,number>([[food.huevo_gallina, 100], [food.arroz_blanco, 300]]), "Primer Plato")
+export let plato04 = new Plate("Arroz con huevo", new Map<Food,number>([[food.huevo_gallina, 100], [food.arroz_blanco, 300]]), "Segundo Plato")
 
-let plato01 = new Plate("Espaguetis", new Map<Food,number>([[alimento01, 100], [alimento02, 200], [alimento03, 500]]), "Segundo Plato");
-
-console.log(plato01.getNutritional());
-plato01.printFood();
