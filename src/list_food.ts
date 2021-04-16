@@ -9,7 +9,7 @@ export let arroz_blanco = new Food("Arroz blanco", "Cereales", "Madrid", 86, 7, 
 export let arroz_integral = new Food("Arroz integral", "Cereales", "Madrid", 73.4, 8, 2.2, 1.08);
 
 /*Leche*/
-export let leche_desnatada = new Food("Leche desnatada", "Leche", "Madrid", 4.6, 3.6, 0.3, 0.79);
+export let leche_desnatada = new Food("Leche desnatada", "Leche", "Madrid", 4.6, 3.6, 0.3, 0.79); 
 export let leche_semidesnatada = new Food("Leche semidesnatada", "Leche", "Madrid", 4.6, 3.3, 1.6, 0.84);
 export let leche_entera = new Food("Leche entera", "Leche", "Madrid", 4.7, 3.1, 3.5, 0.79);
 
