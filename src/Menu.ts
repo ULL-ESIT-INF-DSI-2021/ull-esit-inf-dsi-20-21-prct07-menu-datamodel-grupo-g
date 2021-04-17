@@ -18,11 +18,13 @@ export class Menu {
     return this.postre != undefined ? this.entrante.priceGenerator() + this.primerPlato.priceGenerator() + this.segundoPlato.priceGenerator() + this.postre.priceGenerator() : this.entrante.priceGenerator() + this.primerPlato.priceGenerator() + this.segundoPlato.priceGenerator()
   }
 
-  printPlates() {
+  printPlates() { //Imprime el menu realmente
+    console.log();
     console.log(`Menú:\n  Entrante: ${this.entrante.getName()}\n  Primer Plato: ${this.primerPlato.getName()}\n  Segundo Plato: ${this.segundoPlato.getName()}`)
     if (this.postre != undefined) {
       console.log(`  Postre: ${this.postre.getName()}\n`)
     }
+    console.log();
   }
 
   getPlates() {
