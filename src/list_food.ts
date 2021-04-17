@@ -7,6 +7,7 @@ import {Food} from './Food';
 /*Cereales*/
 export let arroz_blanco = new Food("Arroz blanco", "Cereales", "Madrid", 86, 7, 0.9, 1.5);
 export let arroz_integral = new Food("Arroz integral", "Cereales", "Madrid", 73.4, 8, 2.2, 1.08);
+export let gofio = new Food("Gofio Canario", "Cereales", "Islas Canarias", 64.8, 10.1, 2.74, 2.58);
 
 /*Leche*/
 export let leche_desnatada = new Food("Leche desnatada", "Leche", "Madrid", 4.6, 3.6, 0.3, 0.79); 
@@ -16,6 +17,7 @@ export let leche_entera = new Food("Leche entera", "Leche", "Madrid", 4.7, 3.1, 
 /*Quesos */
 export let queso_azul = new Food("Queso azul", "Quesos", "Francia", 0.1, 21.1, 29.8, 13.50);
 export let queso_rallado = new Food("Queso rallado", "Quesos", "Madrid", 0.5, 40, 28.9, 8.95);
+export let queso_cabra = new Food("Queso de cabra", "Quesos", "Islas Canarias", 1, 13.1, 15.8, 14.96);
 
 /*Huevos*/
 export let huevo_gallina = new Food("Huevo de gallina", "Huevos", "Madrid", 0.7, 12.5, 11.1, 1.99);

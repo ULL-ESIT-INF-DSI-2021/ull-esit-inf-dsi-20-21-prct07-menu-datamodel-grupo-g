@@ -2,8 +2,7 @@ import { Food } from './Food'
 import {Plate} from './Platos'
 
 
-
-class Menu {
+export class Menu {
   constructor(private entrante: Plate, private primerPlato: Plate, private segundoPlato: Plate, private postre?: Plate){
     if (entrante.getCategory() != 'Entrante' || primerPlato.getCategory() != 'Primer Plato' || segundoPlato.getCategory() != 'Segundo Plato') {
       if (postre != undefined) {
