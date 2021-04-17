@@ -1,5 +1,6 @@
-import {Food} from './Food'
+import { Food } from './Food'
 import * as food from './list_food'
+import * as plates from './list_plates'
 
 type Category = "Entrante" | "Primer Plato" | "Segundo Plato" | "Postre"
 
@@ -17,9 +18,18 @@ export class Plate {
   }
 
   printFood() {
+    let aux: string = "";
+    console.log();
+    console.log("Nombre del plato: ", this.getName());
+
     for (let food of this.food) {
-      console.log(food[0].getName());
-    } 
+      aux += food[0].getName();
+      aux += "  ";
+    }
+    
+    console.log("Ingredientes: ", aux);
+    //console.log("Tipo: ", this.getCategory())
+    console.log(); 
   }
 
   getCategory() {
@@ -73,3 +83,6 @@ export class Plate {
   }
 
 }
+
+//let escaldon2 = new Plate("Escaldon", new Map<Food, number>([[food.gofio, 300], [food.cebolla, 200]]), "Primer Plato");
+//escaldon2.printFood()
