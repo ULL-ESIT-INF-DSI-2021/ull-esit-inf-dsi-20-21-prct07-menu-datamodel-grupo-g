@@ -1,5 +1,6 @@
-import {Food} from './Food'
+import { Food } from './Food'
 import * as food from './list_food'
+import * as plates from './list_plates'
 
 type Category = "Entrante" | "Primer Plato" | "Segundo Plato" | "Postre"
 
@@ -17,9 +18,20 @@ export class Plate {
   }
 
   printFood() {
+    let aux: string = "";
+    console.log();
+    console.log("Nombre del plato: ", this.getName());
+
     for (let food of this.food) {
-      console.log(food[0].getName());
-    } 
+      aux += food[0].getName();
+      aux += "  ";
+    }
+    
+    console.log("Ingredientes: ", aux);
+    console.log("Información nutricional: ");
+    this.printNutritional();
+    console.log("Precio: " + (this.priceGenerator()).toFixed(2) + "€");
+    console.log(); 
   }
 
   getCategory() {
@@ -47,6 +59,13 @@ export class Plate {
 
     return resultado;
   }
+
+  printNutritional() {
+    let info = this.getNutritional()
+    for(let i of info) {
+      console.log("  " + i[0] + ": " + i[1].toFixed(2))
+    }
+  }
   
   priceGenerator() { //calcular el precio del plato según los alimentos que tenga y su proporcion
     let price1000: number = 0;
@@ -73,3 +92,6 @@ export class Plate {
   }
 
 }
+
+//let escaldon2 = new Plate("Escaldon", new Map<Food, number>([[food.gofio, 300], [food.cebolla, 200]]), "Primer Plato");
+//escaldon2.printFood()

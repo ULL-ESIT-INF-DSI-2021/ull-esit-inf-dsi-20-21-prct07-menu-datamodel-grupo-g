@@ -3,7 +3,7 @@ import {Plate} from './Platos'
 
 
 export class Menu {
-  constructor(private entrante: Plate, private primerPlato: Plate, private segundoPlato: Plate, private postre?: Plate){
+  constructor(private name: string, private entrante: Plate, private primerPlato: Plate, private segundoPlato: Plate, private postre?: Plate){
     if (entrante.getCategory() != 'Entrante' || primerPlato.getCategory() != 'Primer Plato' || segundoPlato.getCategory() != 'Segundo Plato') {
       if (postre != undefined) {
         if (postre.getCategory() != 'Postre') {
@@ -18,11 +18,19 @@ export class Menu {
     return this.postre != undefined ? this.entrante.priceGenerator() + this.primerPlato.priceGenerator() + this.segundoPlato.priceGenerator() + this.postre.priceGenerator() : this.entrante.priceGenerator() + this.primerPlato.priceGenerator() + this.segundoPlato.priceGenerator()
   }
 
-  printPlates() {
-    console.log(`Menú:\n  Entrante: ${this.entrante.getName()}\n  Primer Plato: ${this.primerPlato.getName()}\n  Segundo Plato: ${this.segundoPlato.getName()}`)
+  printMenu() { //Imprime el menu realmente
+    console.log();
+    console.log(`${this.name}:\n  Entrante: ${this.entrante.getName()}\n  Primer Plato: ${this.primerPlato.getName()}\n  Segundo Plato: ${this.segundoPlato.getName()}`)
     if (this.postre != undefined) {
       console.log(`  Postre: ${this.postre.getName()}\n`)
     }
+    console.log("  Información nutricional: ")
+    let info = this.getNutritional()
+    for(let i of info) {
+      console.log("    " + i[0] + ": " + i[1].toFixed(2))
+    }
+    console.log("  Precio: " + this.getPrice().toFixed(2) + "€")
+    console.log();
   }
 
   getPlates() {

@@ -8,6 +8,7 @@
 
 ## Información
 
+
 [![Tests](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/actions/workflows/node.js.yml/badge.svg)](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/actions/workflows/node.js.yml)
 
 Para acceder al informe de la práctica 7, se puede acceder mediante el siguiente enlace [Informe de la práctica 7]() en donde se explica el desarrollo de la práctica en formato GitHub Page.
