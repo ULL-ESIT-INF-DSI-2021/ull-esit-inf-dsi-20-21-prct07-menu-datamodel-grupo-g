@@ -25,6 +25,7 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
+    "inquire": "^0.4.8",
     "inquirer": "^8.0.0"
   }
 }
