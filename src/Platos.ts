@@ -28,7 +28,9 @@ export class Plate {
     }
     
     console.log("Ingredientes: ", aux);
-    //console.log("Tipo: ", this.getCategory())
+    console.log("Información nutricional: ");
+    this.printNutritional();
+    console.log("Precio: " + (this.priceGenerator()).toFixed(2) + "€");
     console.log(); 
   }
 
@@ -56,6 +58,13 @@ export class Plate {
     resultado.set("Kcal", kcal)
 
     return resultado;
+  }
+
+  printNutritional() {
+    let info = this.getNutritional()
+    for(let i of info) {
+      console.log("  " + i[0] + ": " + i[1].toFixed(2))
+    }
   }
   
   priceGenerator() { //calcular el precio del plato según los alimentos que tenga y su proporcion
