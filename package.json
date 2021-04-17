@@ -7,7 +7,7 @@
     "coverage": "nyc npm test",
     "test": "mocha",
     "doc": "typedoc",
-    "start": "tsc-watch --onSuccess \"node dist/Platos.js\""
+    "start": "tsc-watch --onSuccess \"node dist/MenuCard.js\""
   },
   "keywords": [],
   "author": "",
