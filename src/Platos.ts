@@ -49,9 +49,19 @@ export class Plate {
   }
   
   priceGenerator() { //calcular el precio del plato según los alimentos que tenga y su proporcion
-    //let price = 
+    let price1000: number = 0;
+    let foodWeight: number = 0;
+    let totalPrice: number = 0;
 
-    return 5
+    for (let i of this.food) {
+      price1000 = i[0].getPrice();
+      foodWeight = i[1];
+      totalPrice += (foodWeight * price1000)/1000
+    }
+
+    totalPrice += 2; //Precio por mano de obra
+
+    return totalPrice
   }
 
   getGroups() {
