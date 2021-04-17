@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf .nyc-output",
+    "coverage": "nyc npm test && nyc report --reporter=lcov",
     "test": "mocha",
     "doc": "typedoc",
     "start": "tsc-watch --onSuccess \"node dist/MenuCard.js\""
@@ -17,7 +17,6 @@
     "@types/inquirer": "^7.3.1",
     "@types/mocha": "^8.2.2",
     "chai": "^4.3.4",
-    "coveralls": "^3.1.0",
     "mocha": "^8.3.2",
     "nyc": "^15.1.0",
     "ts-node": "^9.1.1",
