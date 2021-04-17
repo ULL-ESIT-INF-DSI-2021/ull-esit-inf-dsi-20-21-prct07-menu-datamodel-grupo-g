@@ -1,8 +1,5 @@
 import * as inquirer from 'inquirer'
-
-class Carta {
-    constructor(){}
-}
+import {MenuCard} from './MenuCard'
 
 enum Commands {
     VerCarta = "Ver Carta",
@@ -17,25 +14,25 @@ enum Commands2 {
 }
 
 export class Comanda {
-    private carta: Carta
+    private carta: MenuCard
     constructor(){
-        this.carta = new Carta()
+      this.carta = new MenuCard()
     }
 
     promptUser(){
-        console.clear()
-        inquirer.prompt({
-            type: "list",
-            name: "Accion",
-            message: "Bienvenido a Guanchinche El Escaldón, ¿Que desea hacer?",
-            choices: Object.values(Commands)
-        }).then(answers => {
-            switch(answers["Accion"]) {
-                case Commands.VerCarta:
-                    this.promptCarta()
-                    break;
-            }
-        });
+      console.clear()
+      inquirer.prompt({
+        type: "list",
+        name: "Accion",
+        message: "Bienvenido a Guanchinche El Escaldón, ¿Que desea hacer?",
+        choices: Object.values(Commands)
+      }).then(answers => {
+        switch(answers["Accion"]) {
+          case Commands.VerCarta:
+            this.carta.printMenu()
+            break;
+        }
+      });
     }
 
     promptCarta(){
@@ -54,11 +51,11 @@ export class Comanda {
         console.clear()
         console.log("Queso Blanco: \n 504 hidratos de carbono\n 202 proteinas \n 100 lípidos \n Precio: 5€")
         inquirer.prompt({
-            type: "list",
-            name: "Retroceder",
-            choices: ["Retroceder"]
+          type: "list",
+          name: "Retroceder",
+          choices: ["Retroceder"]
         }).then(answers => {
-            this.promptCarta()
+          this.promptCarta()
         });
     }
 }

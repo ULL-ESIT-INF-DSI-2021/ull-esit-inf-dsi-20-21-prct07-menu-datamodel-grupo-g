@@ -1,10 +1,20 @@
 import { Food } from './Food'
 import { Plate } from './Platos'
 import { Menu } from './Menu'
+import * as plates from './list_plates'
+import * as menus from './list_menu'
 
 
 export class MenuCard {
-  constructor(private plates: Plate[], private menu: Menu[]){
+  private plates: Plate[] = [];
+  private menu: Menu[] = [];
+  constructor(){
+    Object.values(plates).forEach(element => {
+      this.plates.push(element)
+    });
+    Object.values(menus).forEach(element => {
+      this.menu.push(element)
+    });
   }
 
   getPlates() {
@@ -50,7 +60,8 @@ export class MenuCard {
     
     console.log("---------------- MENUS ----------------");
     for(let menu of this.menu) {
-      menu.printPlates();
+      menu.printMenu();
     }
   }
 }  
+
