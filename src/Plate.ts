@@ -6,7 +6,7 @@ type Category = "Entrante" | "Primer Plato" | "Segundo Plato" | "Postre"
 
 export class Plate {
   
-  constructor(private name: string,  private food: Map<Food, number>, private category: Category){
+  constructor(public name: string,  private food: Map<Food, number>, private category: Category){
   }
 
   getName() {
