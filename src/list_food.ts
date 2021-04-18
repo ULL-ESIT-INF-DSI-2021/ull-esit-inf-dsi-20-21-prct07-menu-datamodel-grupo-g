@@ -1,13 +1,10 @@
 import {Food} from './Food';
 
-/*Nombre, tipo, origen, hidratos, proteinas, lipidos, precio*/
-/*un kilo de huevos de gallina son 12 huevos*/
-/*un kilo de huevos de codorniz son 100 huevos*/
-
 /*Cereales*/
 export let arroz_blanco = new Food("Arroz blanco", "Cereales", "Madrid", 86, 7, 0.9, 1.5);
 export let arroz_integral = new Food("Arroz integral", "Cereales", "Madrid", 73.4, 8, 2.2, 1.08);
 export let gofio = new Food("Gofio Canario", "Cereales", "Islas Canarias", 64.8, 10.1, 2.74, 2.58);
+export let pan = new Food("Pan", "Cereales", "Tenerife", 58, 7.8, 1, 2.43);
 
 /*Leche*/
 export let leche_desnatada = new Food("Leche desnatada", "Leche", "Madrid", 4.6, 3.6, 0.3, 0.79); 
@@ -44,7 +41,6 @@ export let ajo = new Food("Ajo", "Verduras", "Madrid", 23, 5.3, 0.3, 2.60);
 export let champiñón = new Food("Champiñón", "Verduras", "Madrid", 4, 1.8, 0.3, 5.0);
 export let espinacas = new Food("Espinacas", "Verduras", "Madrid", 1.2, 2.6, 0.3, 1.19);
 export let lechuga = new Food("Lechuga", "Verduras", "Madrid", 6.6, 1.34, 0.2, 0.96);
-
 
 /*Hortalizas*/
 export let zanahoria = new Food("Zanahoria", "Hortalizas", "Madrid", 7.3, 0.9, 0.2, 0.69);

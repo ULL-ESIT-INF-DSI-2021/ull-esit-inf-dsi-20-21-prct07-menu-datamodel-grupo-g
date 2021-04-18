@@ -1,5 +1,5 @@
 import { Food } from './Food'
-import { Plate } from './Platos'
+import { Plate } from './Plate'
 import { Menu } from './Menu'
 import * as plates from './list_plates'
 import * as menus from './list_menu'

@@ -1,5 +1,5 @@
 import { Food } from './Food'
-import {Plate} from './Platos'
+import {Plate} from './Plate'
 
 
 export class Menu {

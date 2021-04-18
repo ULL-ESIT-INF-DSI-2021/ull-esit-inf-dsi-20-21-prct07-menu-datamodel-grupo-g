@@ -90,8 +90,4 @@ export class Plate {
     }
     return resultado
   }
-
 }
-
-//let escaldon2 = new Plate("Escaldon", new Map<Food, number>([[food.gofio, 300], [food.cebolla, 200]]), "Primer Plato");
-//escaldon2.printFood()
