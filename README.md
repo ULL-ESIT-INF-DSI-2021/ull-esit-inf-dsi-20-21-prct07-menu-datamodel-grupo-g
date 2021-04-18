@@ -18,7 +18,7 @@ El objetivo principal de la práctica es la realización de la modelación del d
 
 ## 4. Desarrollo
 
-Para el desarrollo de la práctica hemos realizado las clases (Food)[https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/blob/master/src/Food.ts], (Plate)[https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/blob/master/src/Plate.ts], (Menu)[https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/blob/master/src/Menu.ts], (MenuCard)[https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/blob/master/src/MenuCard.ts] y (Comanda)[https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/blob/master/src/Comanda.ts], y los archivos (list_food)[https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/blob/master/src/list_food.ts], (list_plates)[https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/blob/master/src/list_plates.ts] y (list_menu)[https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/blob/master/src/list_menu.ts] que guardan ingredientes, platos y menus respectivamente. Se han implementado 84 alimentos, 22 platos y 5 menus. 
+Para el desarrollo de la práctica hemos realizado las clases [Food](./src/Food.ts), [Plate](./src/Plate.ts), [Menu](./src/Menu.ts), [MenuCard](./src/MenuCard.ts) y [Comanda](./src/Comanda.ts), y los archivos [list_food](./src/list_food.ts), [list_plates](./src/list_plates.ts) y [list_menu](./src/list_menu.ts) que guardan ingredientes, platos y menus respectivamente. Se han implementado 84 alimentos, 22 platos y 5 menus. 
 
 ### 4.1 Food
 Esta clase tendrá como objetivo construir nuestro objeto base `Food` el cual representará nuestros alimentos. Se indicará el nombre del alimento, el grupo alimenticio (carne, pescado, fruta, verdura, quesos...), el origen geográfico, los valores nutricionales (hidratos de carbono, proteinas y lípidos) para cada 100 gramos y el precio por cada kilo del alimento.
@@ -41,6 +41,8 @@ El método `getNutricional()` calculará los valores nutricionales totales del p
 El método `priceGenerator()` recoge el precio de cada uno de los alimentos (que se encuentra en €/kg) y realiza una comparación con el peso del alimento que se utiliza en el plato, multiplicando este por el precio del alimento (en kg) y dividiendo este entre mil (para corresponderlo con los gramos, que es la unidad en la que se encuentra el peso de los alimentos). Hemos agregado tambien un valor extra para el precio que será el precio de la mano de obra, el cual incrementará el precio final.
 
 ### 4.3 Menu
+La clase `Menu` se encargará de formar los menus con nuestros objetos de tipo `Plate`. Estará formado por el nombre del menú, 3 platos obligatorios y uno opcional. Se deberán insertar en el orden correspondiente: entrante, primer plato, segundo plato, postre (opcional).
+
 
 
 ### 4.4 MenuCard
