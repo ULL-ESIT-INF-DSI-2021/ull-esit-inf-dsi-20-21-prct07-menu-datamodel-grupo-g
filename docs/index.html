@@ -83,30 +83,38 @@
 				<a href="#4-desarrollo" id="4-desarrollo" style="color: inherit; text-decoration: none;">
 					<h2>4. Desarrollo</h2>
 				</a>
-				<p>Para el desarrollo de la práctica hemos realizado las clases Food, Plate, Menu, MenuCard y Comanda, y los archivos list_food, list_plates y list_menu que guardan ingredientes, platos y menus respectivamente. Se han implementado 84 alimentos, 22 platos y 5 menus. </p>
+				<p>Para el desarrollo de la práctica hemos realizado las clases <a href="./src/Food.ts">Food</a>, <a href="./src/Plate.ts">Plate</a>, <a href="./src/Menu.ts">Menu</a>, <a href="./src/MenuCard.ts">MenuCard</a> y <a href="./src/Comanda.ts">Comanda</a>, y los archivos <a href="./src/list_food.ts">list_food</a>, <a href="./src/list_plates.ts">list_plates</a> y <a href="./src/list_menu.ts">list_menu</a> que guardan ingredientes, platos y menus respectivamente. Se han implementado 84 alimentos, 22 platos y 5 menus. </p>
 				<a href="#41-food" id="41-food" style="color: inherit; text-decoration: none;">
-					<h3>4.1 Food</h3>
+					<h3><a href="./src/Food.ts">4.1 Food</a></h3>
 				</a>
-				<p>Esta clase tendrá como objetivo construir nuestro objeto base <code>Food</code> el cual representará nuestros alimentos. Se indicará el nombre del alimento, el grupo alimenticio (carne, pescado, fruta, verdura, quesos...), el origen geográfico, los valores nutricionales (hidratos de carbono, proteinas y lípidos) y el precio por cada kilo del alimento.</p>
+				<p>Esta clase tendrá como objetivo construir nuestro objeto base <code>Food</code> el cual representará nuestros alimentos. Se indicará el nombre del alimento, el grupo alimenticio (carne, pescado, fruta, verdura, quesos...), el origen geográfico, los valores nutricionales (hidratos de carbono, proteinas y lípidos) para cada 100 gramos y el precio por cada kilo del alimento.</p>
+				<p>Se cuenta con un <strong>getter</strong> y un <strong>setter</strong> para cada atributo de la clase así cómo de una función <code>getKcal</code> que cálcula las kilocalorias totales a partir de los valores nutricionales de cada alimento.</p>
 				<a href="#42-plate" id="42-plate" style="color: inherit; text-decoration: none;">
-					<h3>4.2 Plate</h3>
+					<h3><a href="./src/Plate.ts">4.2 Plate</a></h3>
 				</a>
 				<p>La clase <code>Plate</code> se engargará de crear los distintos platos que formarán nuestra carta y nuestros menus. Se indicará el nombre del plato, cada uno de los alimentos que lleva junto a la cantidad en gramos del alimento y el tipo de plato (entrante, primer plato...).a</p>
-				<p>Tendremos un método de impresión que estructurará e imprimirá la información del plato por pantalla, incluyendo los ingredientes del mismo, su información nutricional y el precio del mismo. </p>
+				<p>Tendremos algunos métodos que nos ayudarán a la hora de mostrar la información por pantalla, los métodos <code>printFood()</code> y <code>getGroups()</code> </p>
+				<p><code>printFood()</code> es un método de impresión que estructurará e imprimirá la información del plato por pantalla, incluyendo los ingredientes del mismo, su información nutricional y el precio del mismo. </p>
+				<p>El método <code>getGroups()</code> se encarga de buscar en nuestros platos los tipos de alimentos que contienen (carne, pescado, verduras, leche...) y los almacenará en una cadena que luego mostramos por pantalla en <code>printFood()</code>.</p>
 				<p>Tendremos dos métodos de ajuste de datos que serán el <code>getNutricional()</code> y <code>priceGenerator()</code>, ambos calcularán la equivalencia de los datos generales a los datos particulares de los platos.</p>
 				<p>El método <code>getNutricional()</code> calculará los valores nutricionales totales del plato, analizando todos los alimentos que componen el plato. En primer lugar crearemos una variable <code>multiplier</code> y dentro de ella almacenaremos el resultado de la division de la cantidad de cada alimento indicada en gramos entre 100, hacemos esto porque los valores nutricionales se encuentran indicados por cada 100 gramos del alimento. Luego para cada valor nutricional recogeremos el valor del mismo y lo multiplicaremos por nuestra variable <code>multiplier</code> y sumaremos este valor con el resto de valores del mismo valor nutricional que recojamos de los alimentos de nuestros platos.a</p>
-				<p>El método <code>priceGenerator()</code> recoge eñ </p>
+				<p>El método <code>priceGenerator()</code> recoge el precio de cada uno de los alimentos (que se encuentra en €/kg) y realiza una comparación con el peso del alimento que se utiliza en el plato, multiplicando este por el precio del alimento (en kg) y dividiendo este entre mil (para corresponderlo con los gramos, que es la unidad en la que se encuentra el peso de los alimentos). Hemos agregado tambien un valor extra para el precio que será el precio de la mano de obra, el cual incrementará el precio final.</p>
 				<a href="#43-menu" id="43-menu" style="color: inherit; text-decoration: none;">
-					<h3>4.3 Menu</h3>
+					<h3><a href="./src/Menu.ts">4.3 Menu</a></h3>
 				</a>
+				<p>La clase <code>Menu</code> se encargará de formar los menus con nuestros objetos de tipo <code>Plate</code>. Estará formado por el nombre del menú, 3 platos obligatorios y uno opcional. Se deberán insertar en el orden correspondiente: entrante, primer plato, segundo plato, postre (opcional). Ya que el postre es opcional hemos tenido en cuenta esta condicion a lo largo de todo el código.</p>
+				<p>Para incorporar el precio de los menus trabajaremos con un método <code>getPrice()</code> que sumara los precios de los platos y devolverá el precio total.
+				El método <code>getPlates()</code> devolverá los platos que contiene el menú.</p>
+				<p>También contaremos con el método de impresión <code>printMenu()</code> que estructurará e imprimirá los menus en un formato determinado, mostrando los platos que lo conforman, su información nutricional y el precio. Para la impresión también tendremos la función <code>printCategories()</code> que mostrará por pantalla los tipos de alimentos que tiene cada uno de los platos del menú (carne, pescado, cereales...)</p>
+				<p>El método <code>getNutritional()</code> que recolecta y estructura la información nutricional en una variable Map que contiene el nombre del valor nutricional y su valor numérico (que obtendremos sumando los valores nutricionales de todos los platos).</p>
 				<a href="#44-menucard" id="44-menucard" style="color: inherit; text-decoration: none;">
-					<h3>4.4 MenuCard</h3>
+					<h3><a href="./src/MenuCard.ts">4.4 MenuCard</a></h3>
 				</a>
 				<p>La clase MenuCard se encargará de realizar la composición de la carta de nuestro restaurante, formada por los platos de nuestra clase <code>Plate</code> y los menus de nuestra clase <code>Menu</code>, declarados en listas separadas <code>list_food</code>, <code>list_plates</code> y <code>list_menu</code>.</p>
 				<p>Los atributos serán vectores de <code>Plate</code> y de <code>Menu</code> los cuales rellenaremos con los elementos declarados en las listas mencionadas anteriormente.</p>
-				<p>El método printMenu() se encarga de estructurar la información de los platos y menus e imprimirla por pantalla separando los platos por su categoría (entrante, primer plato...) y luego añadiendo los menus.</p>
+				<p>El método <code>printMenu()</code> se encarga de estructurar la información de los platos y menus e imprimirla por pantalla separando los platos por su categoría (entrante, primer plato...) y luego añadiendo los menus.</p>
 				<a href="#45-comanda" id="45-comanda" style="color: inherit; text-decoration: none;">
-					<h3>4.5 Comanda</h3>
+					<h3><a href="./src/Comanda.ts">4.5 Comanda</a></h3>
 				</a>
 				<p>El objetivo de la clase comanda es implementar una interfaz interactiva con el usuario, mediante la cual este podrá visualizar la carta del restaurante, realizar una comanda, y además, que esta quede guardada en un archivo de texto.</p>
 				<p>En la clase comanda hacemos uso de las librerias <strong>lowdb</strong>, e <strong>inquirer</strong>, basándonos en los ejemplos ofrecidos en el libro de TypeScript del campus virtual.</p>
@@ -115,9 +123,17 @@
 				<a href="#5-conclusiones" id="5-conclusiones" style="color: inherit; text-decoration: none;">
 					<h2>5. Conclusiones</h2>
 				</a>
+				<p>En conclusión la utilización de <strong>lowdb</strong> y <strong>inquirer</strong> nos permite crear interfaces interactivas y cómodas a la hora de interactuar con los usuarios y conseguir un feedback de mayor calidad cuando los usuarios quieran escoger sus platos o menús o ver cómo es la carta, que platos hay y toda la información relevante en relación a ellos.</p>
+				<p>Por otro lado la implementación de de GitHub Actions implementa un mayor workflow y comprobación de errores entre todos los integrantes del grupo.</p>
 				<a href="#6-bibliografía" id="6-bibliografía" style="color: inherit; text-decoration: none;">
 					<h2>6. Bibliografía</h2>
 				</a>
+				<ul>
+					<li><a href="https://ull-esit-inf-dsi-2021.github.io/prct07-menu-dataModel/">Guión Práctica 7</a></li>
+					<li><a href="https://drive.google.com/file/d/1hwtPovQlGvthaE7e7yYshC4v8rOtLSw0/view">Video de integracion de GitHub Action</a></li>
+					<li><a href="https://drive.google.com/file/d/1yOonmpVbOyvzx3ZbXMQTAPxvA3a7AE7w/view">Coveralls con GitHub</a></li>
+					<li>Capítulo 1 del libro Essential TypeScript: From Beginner to Pro</li>
+				</ul>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
