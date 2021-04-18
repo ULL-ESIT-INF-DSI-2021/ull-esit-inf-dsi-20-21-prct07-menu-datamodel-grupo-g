@@ -1,7 +1,7 @@
 import 'chai';
 import {expect} from 'chai';
 import {Food} from '../src/Food';
-import {Plate} from '../src/Platos'
+import {Plate} from '../src/Plate'
 
 let ternera = new Food("Ternera", "Carne", "Madrid", 30, 40, 10, 100);
 let alimento01 = new Food("Carne molida", "Carne", "Valladolid", 200, 10, 50, 10);
