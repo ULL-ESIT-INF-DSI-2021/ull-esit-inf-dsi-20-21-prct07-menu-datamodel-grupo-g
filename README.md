@@ -18,7 +18,7 @@ El objetivo principal de la práctica es la realización de la modelación del d
 
 ## 4. Desarrollo
 
-Para el desarrollo de la práctica hemos realizado las clases Food, Plate, Menu, MenuCard y Comanda, y los archivos list_food, list_plates y list_menu que guardan ingredientes, platos y menus respectivamente.  
+Para el desarrollo de la práctica hemos realizado las clases Food, Plate, Menu, MenuCard y Comanda, y los archivos list_food, list_plates y list_menu que guardan ingredientes, platos y menus respectivamente. Se han implementado 84 alimentos, 22 platos y 5 menus. 
 
 ### 4.1 Food
 Esta clase tendrá como objetivo construir nuestro objeto base `Food` el cual representará nuestros alimentos. Se indicará el nombre del alimento, el grupo alimenticio (carne, pescado, fruta, verdura, quesos...), el origen geográfico, los valores nutricionales (hidratos de carbono, proteinas y lípidos) y el precio por cada kilo del alimento.
@@ -30,7 +30,9 @@ Tendremos un método de impresión que estructurará e imprimirá la informació
 
 Tendremos dos métodos de ajuste de datos que serán el `getNutricional()` y `priceGenerator()`, ambos calcularán la equivalencia de los datos generales a los datos particulares de los platos.
 
-El método `getNutricional()` calculará los valores nutricionales totales del plato, analizando todos los alimentos que componen el plato. En primer lugar crearemos una variable `multiplier` y dentro de ella almacenaremos el resultado de la division de la cantidad de cada alimento indicada en gramos entre 100, hacemos esto porque los valores nutricionales se encuentran indicados por cada 100 gramos del alimento. Luego para cada valor nutricional recogeremos el valor del mismo y lo multiplicaremos por nuestra variable `multiplier`.
+El método `getNutricional()` calculará los valores nutricionales totales del plato, analizando todos los alimentos que componen el plato. En primer lugar crearemos una variable `multiplier` y dentro de ella almacenaremos el resultado de la division de la cantidad de cada alimento indicada en gramos entre 100, hacemos esto porque los valores nutricionales se encuentran indicados por cada 100 gramos del alimento. Luego para cada valor nutricional recogeremos el valor del mismo y lo multiplicaremos por nuestra variable `multiplier` y sumaremos este valor con el resto de valores del mismo valor nutricional que recojamos de los alimentos de nuestros platos.a
+
+El método `priceGenerator()` recoge eñ 
 
 
 

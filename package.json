@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "coverage": "nyc npm test && nyc report --reporter=lcov",
     "test": "mocha",
+    "coverage": "nyc npm test && nyc report --reporter=lcov",
     "doc": "typedoc",
     "start": "tsc-watch --onSuccess \"node dist/MenuCard.js\""
   },
