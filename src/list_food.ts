@@ -10,6 +10,7 @@ export let pan = new Food("Pan", "Cereales", "Tenerife", 58, 7.8, 1, 2.43);
 export let leche_desnatada = new Food("Leche desnatada", "Leche", "Madrid", 4.6, 3.6, 0.3, 0.79); 
 export let leche_semidesnatada = new Food("Leche semidesnatada", "Leche", "Madrid", 4.6, 3.3, 1.6, 0.84);
 export let leche_entera = new Food("Leche entera", "Leche", "Madrid", 4.7, 3.1, 3.5, 0.79);
+export let leche_condensada = new Food("Leche condensada", "Leche", "Madrid", 26, 8.8, 9.3, 1.99);
 
 /*Quesos */
 export let queso_azul = new Food("Queso azul", "Quesos", "Francia", 0.1, 21.1, 29.8, 13.50);
@@ -36,7 +37,7 @@ export let salchicha_frankfurt = new Food("salchicha_frankfurt", "Embutidos", "M
 export let chorizo = new Food("chorizo", "Embutidos", "Madrid", 2, 22, 21, 10.99);
 export let chistorra = new Food("chistorra", "Embutidos", "Madrid", 0.9, 17.4, 49, 9.28);
 
-/*Verduras revisar*/
+/*Verduras*/
 export let ajo = new Food("Ajo", "Verduras", "Madrid", 23, 5.3, 0.3, 2.60);
 export let champiñón = new Food("Champiñón", "Verduras", "Madrid", 4, 1.8, 0.3, 5.0);
 export let espinacas = new Food("Espinacas", "Verduras", "Madrid", 1.2, 2.6, 0.3, 1.19);
@@ -51,6 +52,9 @@ export let tomate = new Food("Tomate", "Hortalizas", "Madrid", 3.5, 1, 0.11, 2.3
 export let patata = new Food("Patata", "Hortalizas", "Madrid", 18, 2.5, 0.2, 1.33);
 export let repollo = new Food("Repollo", "Hortalizas", "Madrid", 3.4, 3.3, 0.3, 0.99);
 export let rucula = new Food("Rúcula", "Hortalizas", "Madrid", 3.7, 2.6, 0.66, 15.80);
+
+/*Legumbres*/
+export let garbanzo = new Food("Garbanzo", "Legumbres", "Tenerife", 18.7, 8.9, 2.5, 2.05);
 
 /*Frutas*/
 export let aguacate = new Food("Aguacate", "Frutas", "Madrid", 5.9, 1.5, 12, 2.5);
@@ -103,3 +107,6 @@ export let calamar = new Food("Calamar", "Moluscos", "Madrid", 0, 17, 1.3, 7.98)
 export let cangrejo = new Food("Cangrejo", "Moluscos", "Madrid", 0, 19.5, 5.1, 7.95);
 export let gambas = new Food("Gambas", "Moluscos", "Madrid", 0, 20.1, 1.4, 22.47);
 export let pulpo = new Food("Pulpo", "Moluscos", "Madrid", 0, 10.6, 1, 29.86);
+
+/*Dulces*/
+export let chocolate = new Food("Chocolate", "Dulces", "Madrid", 56.4, 7.8, 30.6, 4.95)
