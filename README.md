@@ -18,7 +18,7 @@ El objetivo principal de la práctica es la realización de la modelación del d
 
 ## 4. Desarrollo
 
-Para el desarrollo de la práctica hemos realizado las clases `Food`, `Plate`, `Menu`, `MenuCard` y `Comanda`, y los archivos `list_food`, `list_plates` y `list_menu` que guardan ingredientes, platos y menus respectivamente. Se han implementado 84 alimentos, 22 platos y 5 menus. 
+Para el desarrollo de la práctica hemos realizado las clases `(Food)[https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/blob/master/src/Food.ts]`, `(Plate)[https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/blob/master/src/Plate.ts]`, `(Menu)[https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/blob/master/src/Menu.ts]`, `(MenuCard)[https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/blob/master/src/MenuCard.ts]` y `(Comanda)[https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/blob/master/src/Comanda.ts]`, y los archivos `(list_food)[https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/blob/master/src/list_food.ts]`, `(list_plates)[https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/blob/master/src/list_plates.ts]` y `(list_menu)[https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/blob/master/src/list_menu.ts]` que guardan ingredientes, platos y menus respectivamente. Se han implementado 84 alimentos, 22 platos y 5 menus. 
 
 ### 4.1 Food
 Esta clase tendrá como objetivo construir nuestro objeto base `Food` el cual representará nuestros alimentos. Se indicará el nombre del alimento, el grupo alimenticio (carne, pescado, fruta, verdura, quesos...), el origen geográfico, los valores nutricionales (hidratos de carbono, proteinas y lípidos) para cada 100 gramos y el precio por cada kilo del alimento.
@@ -32,7 +32,7 @@ Tendremos algunos métodos que nos ayudarán a la hora de mostrar la informació
 
 `printFood()` es un método de impresión que estructurará e imprimirá la información del plato por pantalla, incluyendo los ingredientes del mismo, su información nutricional y el precio del mismo. 
 
-El método `getGroups()` se encarga de buscar en nuestros platos los tipos de alimentos que contienen (carne, pescado, verduras, leche...) y los almacenará en un vector de cadenas.
+El método `getGroups()` se encarga de buscar en nuestros platos los tipos de alimentos que contienen (carne, pescado, verduras, leche...) y los almacenará en una cadena que luego mostramos por pantalla en `printFood()`.
 
 Tendremos dos métodos de ajuste de datos que serán el `getNutricional()` y `priceGenerator()`, ambos calcularán la equivalencia de los datos generales a los datos particulares de los platos.
 
@@ -40,16 +40,15 @@ El método `getNutricional()` calculará los valores nutricionales totales del p
 
 El método `priceGenerator()` recoge el precio de cada uno de los alimentos (que se encuentra en €/kg) y realiza una comparación con el peso del alimento que se utiliza en el plato, multiplicando este por el precio del alimento (en kg) y dividiendo este entre mil (para corresponderlo con los gramos, que es la unidad en la que se encuentra el peso de los alimentos). Hemos agregado tambien un valor extra para el precio que será el precio de la mano de obra, el cual incrementará el precio final.
 
-
 ### 4.3 Menu
+
 
 ### 4.4 MenuCard
 La clase MenuCard se encargará de realizar la composición de la carta de nuestro restaurante, formada por los platos de nuestra clase `Plate` y los menus de nuestra clase `Menu`, declarados en listas separadas `list_food`, `list_plates` y `list_menu`.
 
 Los atributos serán vectores de `Plate` y de `Menu` los cuales rellenaremos con los elementos declarados en las listas mencionadas anteriormente.
 
-El método printMenu() se encarga de estructurar la información de los platos y menus e imprimirla por pantalla separando los platos por su categoría (entrante, primer plato...) y luego añadiendo los menus.
-
+El método `printMenu()` se encarga de estructurar la información de los platos y menus e imprimirla por pantalla separando los platos por su categoría (entrante, primer plato...) y luego añadiendo los menus.
 
 ### 4.5 Comanda
 El objetivo de la clase comanda es implementar una interfaz interactiva con el usuario, mediante la cual este podrá visualizar la carta del restaurante, realizar una comanda, y además, que esta quede guardada en un archivo de texto.

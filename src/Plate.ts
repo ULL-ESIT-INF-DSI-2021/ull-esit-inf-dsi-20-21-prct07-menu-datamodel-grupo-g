@@ -47,6 +47,7 @@ export class Plate {
     console.log("Información nutricional: ");
     this.printNutritional();
     console.log("Precio: " + (this.priceGenerator()).toFixed(2) + "€");
+    console.log("Grupos alimenticios presentes: ", this.getGroups());
     console.log(); 
   }
 
@@ -120,9 +121,10 @@ export class Plate {
    * @returns devuelve un vector de string con los tipos de alimentos hallados en nuestro plato.
    */
   getGroups() {
-    let resultado: string[] = []
+    let resultado: string = ""
     for (let i of this.food){
-      resultado.push(i[0].getGroup())
+      resultado += i[0].getGroup();
+      resultado += " ";
     }
     return resultado
   }

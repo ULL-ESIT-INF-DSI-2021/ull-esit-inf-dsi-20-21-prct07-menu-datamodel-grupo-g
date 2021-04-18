@@ -160,6 +160,6 @@ export class Comanda {
 
 }
 
-/*
+
 let x = new Comanda()
-x.promptUser()*/
+x.promptUser()

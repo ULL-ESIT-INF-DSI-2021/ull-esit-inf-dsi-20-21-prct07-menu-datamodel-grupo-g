@@ -72,5 +72,4 @@ export class MenuCard {
       menu.printMenu();
     }
   }
-}  
-
+}
