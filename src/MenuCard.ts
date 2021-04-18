@@ -4,7 +4,12 @@ import { Menu } from './Menu'
 import * as plates from './list_plates'
 import * as menus from './list_menu'
 
-
+/** 
+ * Clase MenuCard que realiza la composición de la carta de nuestros platos y menus
+ * sus atributos corresponden a un vector de objetos de tipo Plate y otro de objetos tipo
+ * Menu, ambos se construiran mediante las listas list_menu y list_plates (a la vez esta con
+ * list_food) 
+ */
 export class MenuCard {
   private plates: Plate[] = [];
   private menu: Menu[] = [];
@@ -25,6 +30,10 @@ export class MenuCard {
     return this.menu;
   }
 
+  /**
+   * Imprime la carta con los platos junto a los menus llamando a los métodos de impresión
+   * de las clases correspondientes
+   */
   printMenu() {
 
     console.log("---------------- CARTA ----------------");

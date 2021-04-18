@@ -1,4 +1,4 @@
-type FoodGroup = "Carne" | "Pescado" | "Moluscos" |"Huevos" | "Tofu" | "Frutos secos" | "Semillas" | "Legumbres" | "Verduras" | "Hortalizas" | "Leche" | "Quesos" | "Embutidos" | "Cereales" | "Frutas" | "Dulces"; 
+type FoodGroup = "Carne" | "Pescado" | "Moluscos" |"Huevos" | "Tofu" | "Frutos secos" | "Semillas" | "Legumbres" | "Verduras" | "Hortalizas" | "Leche" | "Quesos" | "Embutidos" | "Cereales" | "Frutas" | "Dulces" | "Grasa"; 
 
 export class Food {
   constructor(private name: string, private group: FoodGroup, private origin: string, private hydrates: number, 

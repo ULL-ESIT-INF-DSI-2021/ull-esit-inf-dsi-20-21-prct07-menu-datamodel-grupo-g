@@ -59,4 +59,8 @@ describe('check setPrice y getPrice function of Food class', () => {
   });
 });
 
-
+describe('check getKcal function of Food class', () => {
+  it('comprobacion si getKcal funcionan', () => {
+    expect(ternera.getKcal()).to.be.equal(530);
+  });
+});

@@ -3,7 +3,7 @@ import {Plate} from './Plate'
 
 
 export class Menu {
-  constructor(private name: string, private entrante: Plate, private primerPlato: Plate, private segundoPlato: Plate, private postre?: Plate){
+  constructor(public name: string, private entrante: Plate, private primerPlato: Plate, private segundoPlato: Plate, private postre?: Plate){
     if (entrante.getCategory() != 'Entrante' || primerPlato.getCategory() != 'Primer Plato' || segundoPlato.getCategory() != 'Segundo Plato') {
       if (postre != undefined) {
         if (postre.getCategory() != 'Postre') {

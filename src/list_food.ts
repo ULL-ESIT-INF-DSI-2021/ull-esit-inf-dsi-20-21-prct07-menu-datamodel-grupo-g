@@ -11,6 +11,8 @@ export let leche_desnatada = new Food("Leche desnatada", "Leche", "Madrid", 4.6,
 export let leche_semidesnatada = new Food("Leche semidesnatada", "Leche", "Madrid", 4.6, 3.3, 1.6, 0.84);
 export let leche_entera = new Food("Leche entera", "Leche", "Madrid", 4.7, 3.1, 3.5, 0.79);
 export let leche_condensada = new Food("Leche condensada", "Leche", "Madrid", 26, 8.8, 9.3, 1.99);
+export let nata_montada = new Food("Nata montada", "Leche", "Madrid", 10.1, 2.1, 31.4, 2.48);
+
 
 /*Quesos */
 export let queso_azul = new Food("Queso azul", "Quesos", "Francia", 0.1, 21.1, 29.8, 13.50);
@@ -110,3 +112,7 @@ export let pulpo = new Food("Pulpo", "Moluscos", "Madrid", 0, 10.6, 1, 29.86);
 
 /*Dulces*/
 export let chocolate = new Food("Chocolate", "Dulces", "Madrid", 56.4, 7.8, 30.6, 4.95)
+export let dulce_leche = new Food("Dulce de leche", "Leche", "Madrid", 94, 0.8, 0.1, 6.59);
+
+/*Grasas*/
+export let mantequilla = new Food("Mantequilla", "Grasa", "Madrid", 83, 0.6, 0.6, 9.12)
