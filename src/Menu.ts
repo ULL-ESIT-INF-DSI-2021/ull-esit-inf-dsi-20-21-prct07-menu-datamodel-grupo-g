@@ -32,14 +32,15 @@ export class Menu {
     console.log();
     console.log(`${this.name}:\n  Entrante: ${this.entrante.getName()}\n  Primer Plato: ${this.primerPlato.getName()}\n  Segundo Plato: ${this.segundoPlato.getName()}`)
     if (this.postre != undefined) {
-      console.log(`  Postre: ${this.postre.getName()}\n`)
+      console.log(`  Postre: ${this.postre.getName()}\n`);
     }
-    console.log("  Información nutricional: ")
+    console.log("  Información nutricional: ");
     let info = this.getNutritional()
     for(let i of info) {
-      console.log("    " + i[0] + ": " + i[1].toFixed(2))
+      console.log("    " + i[0] + ": " + i[1].toFixed(2));
     }
-    console.log("  Precio: " + this.getPrice().toFixed(2) + "€")
+    this.printCategories();
+    console.log("  Precio: " + this.getPrice().toFixed(2) + "€");
     console.log();
   }
 
@@ -92,3 +93,4 @@ export class Menu {
     }
   }
 }
+

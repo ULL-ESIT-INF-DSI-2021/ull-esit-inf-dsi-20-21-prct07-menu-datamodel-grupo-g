@@ -20,6 +20,7 @@ describe('check Plate class', () => {
   it('comprobacion si menu01 es un objeto de la clase Menu', () => {
     expect(menu01).to.be.an.instanceOf(Menu);
   });
+
   it('comprobacion si menu02 es un objeto de la clase Menu', () => {
     expect(menu02).to.be.an.instanceOf(Menu);
   });
