@@ -1,6 +1,5 @@
 import * as inquirer from 'inquirer'
 import {MenuCard} from './MenuCard'
-import { Plate } from './Plate'
 
 enum Commands {
   VerCarta = "Ver Carta",
@@ -59,6 +58,8 @@ export class Comanda {
   }
 
   promptPlatos(){
+    let plato: string;
+    let cantidad: number;
     console.clear()
     inquirer.prompt({
       type: "list",
@@ -66,8 +67,32 @@ export class Comanda {
       message: "Seleccione el plato que desea",
       choices: this.carta.getPlates()
     }).then(answers => {
-      console.log(answers)
+      plato = answers.platos
+      inquirer.prompt({
+        type: "number",
+        name: "Cantidad",
+        message: "¿Cuantas raciones de " + plato + " desea?"
+      }).then(answers => {
+        cantidad = answers.Cantidad
+      }).then(answers => {
+        /* Se guarda en algún sitio
+        CODIGO AQUI
+        
+
+        */
+        inquirer.prompt({
+          type: "list",
+          name: "AlgoMas",
+          message: "¿Desea algo más?",
+          choices: ["Sí", "No"]
+        }).then(answers => {
+          if (answers.AlgoMas == "Sí") {
+            this.promptPedir()
+          }
+        })
+      })
     });
+
   }
 
   promptMenus(){
