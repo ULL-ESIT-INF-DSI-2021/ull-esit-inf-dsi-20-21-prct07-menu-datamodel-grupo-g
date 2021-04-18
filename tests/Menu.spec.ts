@@ -14,16 +14,47 @@ let plato03 = new Plate("Queso rallado con pasta", new Map<Food,number>([[alimen
 let plato04 = new Plate("Carne molida con queso rallado", new Map<Food,number>([[alimento01, 200], [alimento03, 100]]), "Postre");
 
 let menu01 = new Menu("Pastas, queso y carne", plato01, plato02, plato03, plato04);
+let menu02 = new Menu("Pastas, queso y carne", plato01, plato02, plato03);
 
 describe('check Plate class', () => {
   it('comprobacion si menu01 es un objeto de la clase Menu', () => {
     expect(menu01).to.be.an.instanceOf(Menu);
   });
+  it('comprobacion si menu02 es un objeto de la clase Menu', () => {
+    expect(menu02).to.be.an.instanceOf(Menu);
+  });
 });
 
 describe('check getPrice function of Menu class', () => {
-  it('comprobacion si funcionan', () => {
-    expect(plato01.priceGenerator()).to.be.equal(10);
+  it('comprobacion si getPrice funcionan', () => {
+    expect(menu01.getPrice()).to.be.equal(32);
+  });
+});
+
+describe('check printMenu function of Plate class', () => {
+  it('comprobacion si printMenu funcionan', () => {
+    menu01.printMenu();
+  });
+});
+
+describe('check getPlates function of Menu class', () => {
+  it('comprobacion si getPlates funcionan', () => {
+    expect(menu01.getPlates()).to.be.eql([ plato01, plato02, plato03, plato04 ]);
+  });
+});
+
+describe('check getNutritional function of Menu class', () => {
+  it('comprobacion si getNutritional funcionan', () => {
+    expect(menu01.getNutritional()).to.be.a.instanceOf(Map);
+  });
+  it('comprobacion si getNutritional funcionan', () => {
+    expect(menu02.getNutritional()).to.be.a.instanceOf(Map);
+  });
+});
+
+describe('check printCategories function of Plate class', () => {
+  it('comprobacion si printCategories funcionan', () => {
+    menu01.printCategories();
   });
 });
 
