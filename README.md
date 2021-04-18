@@ -18,22 +18,27 @@ El objetivo principal de la práctica es la realización de la modelación del d
 
 ## 4. Desarrollo
 
-Para el desarrollo de la práctica hemos realizado las clases Food, Plate, Menu, MenuCard y Comanda, y los archivos list_food, list_plates y list_menu que guardan ingredientes, platos y menus respectivamente. Se han implementado 84 alimentos, 22 platos y 5 menus. 
+Para el desarrollo de la práctica hemos realizado las clases `Food`, `Plate`, `Menu`, `MenuCard` y `Comanda`, y los archivos `list_food`, `list_plates` y `list_menu` que guardan ingredientes, platos y menus respectivamente. Se han implementado 84 alimentos, 22 platos y 5 menus. 
 
 ### 4.1 Food
-Esta clase tendrá como objetivo construir nuestro objeto base `Food` el cual representará nuestros alimentos. Se indicará el nombre del alimento, el grupo alimenticio (carne, pescado, fruta, verdura, quesos...), el origen geográfico, los valores nutricionales (hidratos de carbono, proteinas y lípidos) y el precio por cada kilo del alimento.
+Esta clase tendrá como objetivo construir nuestro objeto base `Food` el cual representará nuestros alimentos. Se indicará el nombre del alimento, el grupo alimenticio (carne, pescado, fruta, verdura, quesos...), el origen geográfico, los valores nutricionales (hidratos de carbono, proteinas y lípidos) para cada 100 gramos y el precio por cada kilo del alimento.
+
+Se cuenta con un **getter** y un **setter** para cada atributo de la clase así cómo de una función `getKcal` que cálcula las kilocalorias totales a partir de los valores nutricionales de cada alimento.
 
 ### 4.2 Plate
 La clase `Plate` se engargará de crear los distintos platos que formarán nuestra carta y nuestros menus. Se indicará el nombre del plato, cada uno de los alimentos que lleva junto a la cantidad en gramos del alimento y el tipo de plato (entrante, primer plato...).a
 
-Tendremos un método de impresión que estructurará e imprimirá la información del plato por pantalla, incluyendo los ingredientes del mismo, su información nutricional y el precio del mismo. 
+Tendremos algunos métodos que nos ayudarán a la hora de mostrar la información por pantalla, los métodos `printFood()` y `getGroups()` 
+
+`printFood()` es un método de impresión que estructurará e imprimirá la información del plato por pantalla, incluyendo los ingredientes del mismo, su información nutricional y el precio del mismo. 
+
+El método `getGroups()` se encarga de buscar en nuestros platos los tipos de alimentos que contienen (carne, pescado, verduras, leche...) y los almacenará en un vector de cadenas.
 
 Tendremos dos métodos de ajuste de datos que serán el `getNutricional()` y `priceGenerator()`, ambos calcularán la equivalencia de los datos generales a los datos particulares de los platos.
 
 El método `getNutricional()` calculará los valores nutricionales totales del plato, analizando todos los alimentos que componen el plato. En primer lugar crearemos una variable `multiplier` y dentro de ella almacenaremos el resultado de la division de la cantidad de cada alimento indicada en gramos entre 100, hacemos esto porque los valores nutricionales se encuentran indicados por cada 100 gramos del alimento. Luego para cada valor nutricional recogeremos el valor del mismo y lo multiplicaremos por nuestra variable `multiplier` y sumaremos este valor con el resto de valores del mismo valor nutricional que recojamos de los alimentos de nuestros platos.a
 
-El método `priceGenerator()` recoge eñ 
-
+El método `priceGenerator()` recoge el precio de cada uno de los alimentos (que se encuentra en €/kg) y realiza una comparación con el peso del alimento que se utiliza en el plato, multiplicando este por el precio del alimento (en kg) y dividiendo este entre mil (para corresponderlo con los gramos, que es la unidad en la que se encuentra el peso de los alimentos). Hemos agregado tambien un valor extra para el precio que será el precio de la mano de obra, el cual incrementará el precio final.
 
 
 ### 4.3 Menu

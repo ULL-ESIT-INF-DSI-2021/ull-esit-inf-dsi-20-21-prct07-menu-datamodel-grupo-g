@@ -61,8 +61,8 @@
 				<a href="#repositorio-de-la-práctica-7-de-la-asignatura-de-desarrollo-de-sistemas-informáticos" id="repositorio-de-la-práctica-7-de-la-asignatura-de-desarrollo-de-sistemas-informáticos" style="color: inherit; text-decoration: none;">
 					<h1>Repositorio de la Práctica 7 de la asignatura de Desarrollo de Sistemas Informáticos</h1>
 				</a>
-				<a href="#datos" id="datos" style="color: inherit; text-decoration: none;">
-					<h2>Datos</h2>
+				<a href="#1-datos" id="1-datos" style="color: inherit; text-decoration: none;">
+					<h2>1. Datos</h2>
 				</a>
 				<ul>
 					<li><strong>Integrantes:</strong> Bruno Lorenzo Arroyo Pedraza, Carla Cristina Olivares Rodriguez y Aitor Alonso Melián</li>
@@ -71,33 +71,53 @@
 					<li><strong>Asignatura:</strong> Desarrollo de Sistemas Informáticos</li>
 					<li><strong>Práctica:</strong> Práctica 7 Modelo de datos de un sistema que permite el diseño de menús</li>
 				</ul>
-				<a href="#información" id="información" style="color: inherit; text-decoration: none;">
-					<h2>Información</h2>
+				<a href="#2-introducción" id="2-introducción" style="color: inherit; text-decoration: none;">
+					<h2>2. Introducción</h2>
 				</a>
 				<p><a href="https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/actions/workflows/node.js.yml"><img src="https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-g/actions/workflows/node.js.yml/badge.svg" alt="Tests"></a></p>
-				<p>Para acceder al informe de la práctica 7, se puede acceder mediante el siguiente enlace <a href="">Informe de la práctica 7</a> en donde se explica el desarrollo de la práctica en formato GitHub Page.</p>
-				<a href="#food" id="food" style="color: inherit; text-decoration: none;">
-					<h2>Food</h2>
+				<p>Informe de la septima práctica de la asignatura de <strong>Desarrollo de Sistemas Informáticos</strong>. En la práctica propuesta se ha realizado 1 ejercicio en <strong>typescript</strong> que modela un sistema que permite el diseño de menús utilizando <strong>Inquirer.js</strong> y <strong>Lowdb</strong>, así cómo la utilización de las <strong>GitHub Actions</strong>. </p>
+				<a href="#3-objetivos" id="3-objetivos" style="color: inherit; text-decoration: none;">
+					<h2>3. Objetivos</h2>
 				</a>
-				<a href="#plate" id="plate" style="color: inherit; text-decoration: none;">
-					<h2>Plate</h2>
+				<p>El objetivo principal de la práctica es la realización de la modelación del diseño de menús para profundizar en Typescript y Javascript con la utilización de <strong>Inquirer.js</strong> y <strong>Lowdb</strong> y la implementación de <strong>GitHub Actions</strong> para la comprobación de <strong>test unitarios</strong> y la comprobación del cubrimiento del código con <strong>coveralls</strong>.</p>
+				<a href="#4-desarrollo" id="4-desarrollo" style="color: inherit; text-decoration: none;">
+					<h2>4. Desarrollo</h2>
 				</a>
-				<a href="#menu" id="menu" style="color: inherit; text-decoration: none;">
-					<h2>Menu</h2>
+				<p>Para el desarrollo de la práctica hemos realizado las clases Food, Plate, Menu, MenuCard y Comanda, y los archivos list_food, list_plates y list_menu que guardan ingredientes, platos y menus respectivamente. Se han implementado 84 alimentos, 22 platos y 5 menus. </p>
+				<a href="#41-food" id="41-food" style="color: inherit; text-decoration: none;">
+					<h3>4.1 Food</h3>
 				</a>
-				<a href="#menucard" id="menucard" style="color: inherit; text-decoration: none;">
-					<h2>MenuCard</h2>
+				<p>Esta clase tendrá como objetivo construir nuestro objeto base <code>Food</code> el cual representará nuestros alimentos. Se indicará el nombre del alimento, el grupo alimenticio (carne, pescado, fruta, verdura, quesos...), el origen geográfico, los valores nutricionales (hidratos de carbono, proteinas y lípidos) y el precio por cada kilo del alimento.</p>
+				<a href="#42-plate" id="42-plate" style="color: inherit; text-decoration: none;">
+					<h3>4.2 Plate</h3>
+				</a>
+				<p>La clase <code>Plate</code> se engargará de crear los distintos platos que formarán nuestra carta y nuestros menus. Se indicará el nombre del plato, cada uno de los alimentos que lleva junto a la cantidad en gramos del alimento y el tipo de plato (entrante, primer plato...).a</p>
+				<p>Tendremos un método de impresión que estructurará e imprimirá la información del plato por pantalla, incluyendo los ingredientes del mismo, su información nutricional y el precio del mismo. </p>
+				<p>Tendremos dos métodos de ajuste de datos que serán el <code>getNutricional()</code> y <code>priceGenerator()</code>, ambos calcularán la equivalencia de los datos generales a los datos particulares de los platos.</p>
+				<p>El método <code>getNutricional()</code> calculará los valores nutricionales totales del plato, analizando todos los alimentos que componen el plato. En primer lugar crearemos una variable <code>multiplier</code> y dentro de ella almacenaremos el resultado de la division de la cantidad de cada alimento indicada en gramos entre 100, hacemos esto porque los valores nutricionales se encuentran indicados por cada 100 gramos del alimento. Luego para cada valor nutricional recogeremos el valor del mismo y lo multiplicaremos por nuestra variable <code>multiplier</code> y sumaremos este valor con el resto de valores del mismo valor nutricional que recojamos de los alimentos de nuestros platos.a</p>
+				<p>El método <code>priceGenerator()</code> recoge eñ </p>
+				<a href="#43-menu" id="43-menu" style="color: inherit; text-decoration: none;">
+					<h3>4.3 Menu</h3>
+				</a>
+				<a href="#44-menucard" id="44-menucard" style="color: inherit; text-decoration: none;">
+					<h3>4.4 MenuCard</h3>
 				</a>
 				<p>La clase MenuCard se encargará de realizar la composición de la carta de nuestro restaurante, formada por los platos de nuestra clase <code>Plate</code> y los menus de nuestra clase <code>Menu</code>, declarados en listas separadas <code>list_food</code>, <code>list_plates</code> y <code>list_menu</code>.</p>
 				<p>Los atributos serán vectores de <code>Plate</code> y de <code>Menu</code> los cuales rellenaremos con los elementos declarados en las listas mencionadas anteriormente.</p>
 				<p>El método printMenu() se encarga de estructurar la información de los platos y menus e imprimirla por pantalla separando los platos por su categoría (entrante, primer plato...) y luego añadiendo los menus.</p>
-				<a href="#comanda" id="comanda" style="color: inherit; text-decoration: none;">
-					<h2>Comanda</h2>
+				<a href="#45-comanda" id="45-comanda" style="color: inherit; text-decoration: none;">
+					<h3>4.5 Comanda</h3>
 				</a>
 				<p>El objetivo de la clase comanda es implementar una interfaz interactiva con el usuario, mediante la cual este podrá visualizar la carta del restaurante, realizar una comanda, y además, que esta quede guardada en un archivo de texto.</p>
-				<p>En la clase comanda hacemos uso de las librerias <code>lowdb</code>, e <code>inquirer</code>, basándonos en los ejemplos ofrecidos en el libro de TypeScript del campus virtual.</p>
+				<p>En la clase comanda hacemos uso de las librerias <strong>lowdb</strong>, e <strong>inquirer</strong>, basándonos en los ejemplos ofrecidos en el libro de TypeScript del campus virtual.</p>
 				<p>Para visualizar la carta hacemos uso de un método definido en la clase <code>MenuCard</code>, que imprime toda los platos y menús disponibles, por categorías.</p>
-				<p>Para realizar la comanda, o pedir los platos/menus, hacemos que el inquirer recoja como opciones todos los platos y menus disponibles en la clase <code>MenuCard</code>, de manera que puede disponerlos todos como elecciones. Una vez seleccionado el plato se pide al usuario la cantidad de raciones que desea pedir, y se guardan mediante <code>lowdb</code>, tanto el plato elegido como la cantidad de este plato en <code>Comanda.json</code>.</p>
+				<p>Para realizar la comanda, o pedir los platos/menus, hacemos que el inquirer recoja como opciones todos los platos y menus disponibles en la clase <code>MenuCard</code>, de manera que puede disponerlos todos como elecciones. Una vez seleccionado el plato se pide al usuario la cantidad de raciones que desea pedir, y se guardan mediante <strong>lowdb</strong>, tanto el plato elegido como la cantidad de este plato en <code>Comanda.json</code>.</p>
+				<a href="#5-conclusiones" id="5-conclusiones" style="color: inherit; text-decoration: none;">
+					<h2>5. Conclusiones</h2>
+				</a>
+				<a href="#6-bibliografía" id="6-bibliografía" style="color: inherit; text-decoration: none;">
+					<h2>6. Bibliografía</h2>
+				</a>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">

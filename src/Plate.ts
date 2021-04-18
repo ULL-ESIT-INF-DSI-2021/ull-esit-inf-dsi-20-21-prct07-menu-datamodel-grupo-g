@@ -94,10 +94,11 @@ export class Plate {
   /**
    * Método priceGenerator() recoge el precio de cada uno de los alimentos (que se encuentra en €/kg) y realizaremos una
    * comparación con el peso del alimento que se utilizara para el plato, multiplicando este por el precio del alimento por kilogramo
-   * y dividiendo este entre mil (para corresponderlo con los gramos, que es la unidad en la que se encuentra el peso de los alimentos)
+   * y dividiendo este entre mil (para corresponderlo con los gramos, que es la unidad en la que se encuentra el peso de los alimentos).
+   * Hemos agregado tambien un valor extra para el precio que será el precio de la mano de obra, el cual incrementará el precio final.
    * @returns devuelve el precio total del plato.
    */
-  priceGenerator() { //calcular el precio del plato según los alimentos que tenga y su proporcion
+  priceGenerator() {
     let price1000: number = 0;
     let foodWeight: number = 0;
     let totalPrice: number = 0;
