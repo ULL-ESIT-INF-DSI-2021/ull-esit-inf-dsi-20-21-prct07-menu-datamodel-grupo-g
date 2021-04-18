@@ -5,10 +5,19 @@ import * as plates from './list_plates'
 type Category = "Entrante" | "Primer Plato" | "Segundo Plato" | "Postre"
 
 export class Plate {
-  
-  constructor(public name: string,  private food: Map<Food, number>, private category: Category){
+  /**
+   * Clase Plate, se encarga de crear los distintos platos (formados por las variables indicadas
+   * aquí) y de hacer los cálculos de cantidades y precios de cada uno de ellos.
+   * @param name Nombre del plato
+   * @param food Variable de tipo Map que almacena un objeto de tipo Food que contendrá los alimentos por los 
+   * cuales esta formado el plato y un number que será la cantidad (en gramos) de cada uno de esos alimentos 
+   * que utilizamos.
+   * @param category Tipo de plato al que nos referimos: entrante, primer plato... de un tipo de dato que contiene
+   * la información en distintas cadenas.
+   */
+  constructor(public name: string,  private food: Map<Food, number>, private category: Category) {
   }
-
+  
   getName() {
     return this.name;
   }
@@ -17,6 +26,13 @@ export class Plate {
     return this.food;
   }
 
+  getCategory() {
+    return this.category;
+  }
+
+  /**
+   * Método de impresion printFood(), se encarga de estructurar y escribir la información por pantalla de un plato.
+   */
   printFood() {
     let aux: string = "";
     console.log();
@@ -34,10 +50,15 @@ export class Plate {
     console.log(); 
   }
 
-  getCategory() {
-    return this.category;
-  }
-
+  /**
+   * Método getNutricional() encargado de adaptar los valores nutricionales del plato a la cantidad de cada alimento indicada.
+   * El método divide la cantidad indicada en gramos de cada alimento del plato por cien y lo almacena en un multiplicador (ya que los 
+   * valores nutricionales indicados en el objeto Food se encuentran por hidratos de carbono, proteínas y lípidos por cada 100 gramos 
+   * de nuestro alimento). Sumaremos estos valores nutricionales de todos los alimentos para obtener el valor total de cada uno, 
+   * para esto multiplicaremos el valor nutricional correspondiente del alimento por nuestro multiplicador.
+   * @returns retorna un Map con el tipo de valor nutricional al que se refiera y un number con el total de ese valor nutricional
+   * de todos los alimentos del plato.
+   */
   getNutritional() { 
     let resultado = new Map<string,number>()
     let proteinas: number = 0;
@@ -60,6 +81,9 @@ export class Plate {
     return resultado;
   }
 
+  /**
+   * Método printNutritional(), se encarga escribir la información por pantalla de los valores nutricionales de un plato.
+   */
   printNutritional() {
     let info = this.getNutritional()
     for(let i of info) {
@@ -67,6 +91,12 @@ export class Plate {
     }
   }
   
+  /**
+   * Método priceGenerator() recoge el precio de cada uno de los alimentos (que se encuentra en €/kg) y realizaremos una
+   * comparación con el peso del alimento que se utilizara para el plato, multiplicando este por el precio del alimento por kilogramo
+   * y dividiendo este entre mil (para corresponderlo con los gramos, que es la unidad en la que se encuentra el peso de los alimentos)
+   * @returns devuelve el precio total del plato.
+   */
   priceGenerator() { //calcular el precio del plato según los alimentos que tenga y su proporcion
     let price1000: number = 0;
     let foodWeight: number = 0;
@@ -83,6 +113,11 @@ export class Plate {
     return totalPrice
   }
 
+  /**
+   * Método getGroups() que se encarga de buscar en los platos los tipos de alimentos que tenemos para almacenarlos en un 
+   * vector de cadenas.
+   * @returns devuelve un vector de string con los tipos de alimentos hallados en nuestro plato.
+   */
   getGroups() {
     let resultado: string[] = []
     for (let i of this.food){

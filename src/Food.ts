@@ -1,6 +1,17 @@
 type FoodGroup = "Carne" | "Pescado" | "Moluscos" |"Huevos" | "Tofu" | "Frutos secos" | "Semillas" | "Legumbres" | "Verduras" | "Hortalizas" | "Leche" | "Quesos" | "Embutidos" | "Cereales" | "Frutas" | "Dulces" | "Grasa"; 
 
 export class Food {
+  /**
+   * Clase Food que realiza la composición de un objeto que representará a un alimento (con los atributos aquí indicados)
+   * 
+   * @param name
+   * @param group
+   * @param origin
+   * @param hydrates
+   * @param proteins
+   * @param lipids
+   * @param price
+   */
   constructor(private name: string, private group: FoodGroup, private origin: string, private hydrates: number, 
     private proteins: number, private lipids: number, private price: number){}
   

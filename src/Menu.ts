@@ -3,6 +3,9 @@ import {Plate} from './Plate'
 
 
 export class Menu {
+  /**
+   * Constructor de la clase Menú, que representa un Menu, mediante un nombre, y un plato de cada categoría. El menú puede tener o no un postre.
+   */
   constructor(public name: string, private entrante: Plate, private primerPlato: Plate, private segundoPlato: Plate, private postre?: Plate){
     if (entrante.getCategory() != 'Entrante' || primerPlato.getCategory() != 'Primer Plato' || segundoPlato.getCategory() != 'Segundo Plato') {
       if (postre != undefined) {
@@ -14,11 +17,18 @@ export class Menu {
     }
   }
 
+  /**
+   * Método que devuelve el precio total de menú
+   * @returns Precio de menú
+   */
   getPrice() {
     return this.postre != undefined ? this.entrante.priceGenerator() + this.primerPlato.priceGenerator() + this.segundoPlato.priceGenerator() + this.postre.priceGenerator() : this.entrante.priceGenerator() + this.primerPlato.priceGenerator() + this.segundoPlato.priceGenerator()
   }
 
-  printMenu() { //Imprime el menu realmente
+  /**
+   * Imprime el menú
+   */
+  printMenu() { 
     console.log();
     console.log(`${this.name}:\n  Entrante: ${this.entrante.getName()}\n  Primer Plato: ${this.primerPlato.getName()}\n  Segundo Plato: ${this.segundoPlato.getName()}`)
     if (this.postre != undefined) {
@@ -33,10 +43,18 @@ export class Menu {
     console.log();
   }
 
+  /**
+   * Método que devuelve todos los platos del menú en un array.
+   * @returns Array con los platos del menú.
+   */
   getPlates() {
     return this.postre != undefined ? [this.entrante, this.primerPlato, this.segundoPlato, this.postre] : [this.entrante, this.primerPlato, this.segundoPlato]
   }
 
+  /**
+   * Método que devuelve la información nutricional de todo el menú en un Map.
+   * @returns Map con toda la información nutricional.
+   */
   getNutritional() {
     let resultado = new Map<string,number>()
     let proteinas: number = 0;
@@ -64,7 +82,9 @@ export class Menu {
 
     return resultado
   }
-  
+  /**
+   * Imprime las categorías de los alimentos de cada plato.
+   */
   printCategories(){
     console.log(`Categorías de los alimentos en cada plato: \n  Entrante: ${this.entrante.getGroups()}\n  Primer Plato: ${this.primerPlato.getGroups()}\n  Segundo Plato: ${this.segundoPlato.getGroups()}`)
     if (this.postre != undefined) {

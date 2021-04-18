@@ -2,8 +2,6 @@ import * as inquirer from 'inquirer'
 import {MenuCard} from './MenuCard'
 import * as lowdb from 'lowdb'
 import * as FileSync from 'lowdb/adapters/FileSync'
-import { Plate } from './Plate'
-import { Menu } from './Menu'
 
 enum Commands {
   VerCarta = "Ver Carta",
@@ -25,13 +23,19 @@ export class Comanda {
   private carta: MenuCard
   private database: lowdb.LowdbSync<schemaType>
   private pedido: Map<string, number>
+  /** 
+   * Clase comanda, se encarga de implementar una interfaz interactiva que permite al cliente ver la carta, y seleccionar los platos que desea
+   * El constructor se encargará de inicializar los atributos pedido, que se sincronizará con database, que escribirá en el archivo Comanda.json el pedido del cliente.
+   * El atributo carta contiene todos los platos y menus de las listas.
+   */
   constructor(){
     this.pedido = new Map<string, number>()
     this.carta = new MenuCard();
     this.database = lowdb(new FileSync("Comanda.json"));
-    this.store()
   }
-
+  /**
+   * promptUser() ofrece la interfaz inicial del cliente, en el que decidirá si ver la carta o realizar un pedido.
+   */
   promptUser(){
     console.clear()
     inquirer.prompt({
@@ -50,7 +54,9 @@ export class Comanda {
       }
     });
   }
-
+  /**
+   * Si el cliente decide hacer un pedido, se llamará a este método, que simplemente es una interfaz en la que decide si escoger menu o plato.
+   */
   promptPedir(){
     console.clear()
     inquirer.prompt({
@@ -70,6 +76,9 @@ export class Comanda {
     });
   }
 
+  /**
+   * El método promptPlatos() implementa una interfaz que permite seleccionar un plato y que cantidad de ese plato.
+   */
   promptPlatos(){
 
     let plato: string;
@@ -105,7 +114,9 @@ export class Comanda {
     });
 
   }
-
+  /**
+   * El método promptMenus() implementa una interfaz que permite seleccionar un menu y cuantos menus desea.
+   */
   promptMenus(){
     let menu: string;
     let cantidad: number;
@@ -140,11 +151,15 @@ export class Comanda {
     });
   }
 
+  /**
+   * Método privado que se usa dentro de la clase para almacenar en la base de datos.
+   */
   private store() {
     this.database.set("comanda", [...this.pedido]).write()
   }
 
 }
 
+/*
 let x = new Comanda()
-x.promptUser()
+x.promptUser()*/
